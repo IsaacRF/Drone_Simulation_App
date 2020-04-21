@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Drone_Simulation_App.Classes;
 
 namespace Drone_Simulation_App
 {
@@ -10,6 +11,23 @@ namespace Drone_Simulation_App
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("####### Welcome to the drone simulation program #######");
+            Console.WriteLine("Please enter an option:");
+            Console.WriteLine("1.- Start drone simulation");
+            Console.WriteLine("0.- Exit simulation");
+            string option = Console.ReadLine();
+
+            switch (option)
+            {
+                case "1":
+                    Console.WriteLine("Starting simulation...");
+                    Dispatcher dispatcher = new Dispatcher();
+                    dispatcher.LoadAllDronesRoute();
+                    dispatcher.StartDrones();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
