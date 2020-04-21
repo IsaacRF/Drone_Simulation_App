@@ -13,7 +13,7 @@ namespace Drone_Simulation_App
         {
             Console.WriteLine("####### Welcome to the drone simulation program #######");
             Console.WriteLine("Please enter an option:");
-            Console.WriteLine("1.- Start drone simulation");
+            Console.WriteLine("1.- Start drone simulation (Press ENTER again to send shut down signal)");
             Console.WriteLine("0.- Exit simulation");
             string option = Console.ReadLine();
 
@@ -23,11 +23,17 @@ namespace Drone_Simulation_App
                     Console.WriteLine("Starting simulation...");
                     Dispatcher dispatcher = new Dispatcher();
                     dispatcher.LoadAllDronesRoute();
-                    dispatcher.StartDrones();
+                    dispatcher.StartDronesNavigationRoutine();
+
+                    Console.ReadLine();
+                    dispatcher.ShutDownDrones();
                     break;
                 default:
                     break;
             }
+
+            
+            Console.ReadLine();
         }
     }
 }

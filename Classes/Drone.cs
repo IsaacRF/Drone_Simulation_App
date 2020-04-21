@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Drone_Simulation_App.Classes
 {
@@ -34,6 +34,26 @@ namespace Drone_Simulation_App.Classes
             OriginPosition = new Tuple<double, double>(latitude, longitude);
             Speed = speed;
             Route = new List<Tuple<double, double>>();
+        }
+
+        /// <summary>
+        /// Move drone to specified position (Simulated with delay depending on drone speed)
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        public void Move(double latitude, double longitude)
+        {
+            Thread.Sleep(3000 - Speed * 10);
+            Latitude = latitude;
+            Longitude = longitude;
+        }
+
+        /// <summary>
+        /// Move to dron to origin position
+        /// </summary>
+        public void MoveToOrigin()
+        {
+            Move(OriginPosition.Item1, OriginPosition.Item2);
         }
     }
 }
