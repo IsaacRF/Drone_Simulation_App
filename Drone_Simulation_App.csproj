@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Classes\Dispatcher.cs" />
     <Compile Include="Classes\Drone.cs" />
+    <Compile Include="Classes\RoutePoint.cs" />
+    <Compile Include="Classes\TubeStation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
